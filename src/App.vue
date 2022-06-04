@@ -3,13 +3,17 @@ import Rankings from './pages/Rankings.vue';
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
   <Suspense>
     <Rankings />
   </Suspense>
 </template>
 
 <style>
+* {
+  margin: 0 auto;
+  padding: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
