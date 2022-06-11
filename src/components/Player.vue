@@ -7,8 +7,9 @@ defineProps<{ player: IPlayer }>()
 
 <template>
     <div class="player">
-        <img :src="player.image" class="player-image"/>
-        <div>{{player.nickname}}</div>
+        <!-- <img src="../assets/karrigan.png" class="player-image"/> -->
+        <img :src="player.image" class="player-image" />
+        <div class="player-nickname">{{player.nickname}}</div>
     </div>
 </template>
 
@@ -21,5 +22,9 @@ defineProps<{ player: IPlayer }>()
 .player-image {
     width: 7.5em;
     height: auto;
+}
+
+.player-nickname {
+    margin-bottom: 4.5px;
 }
 </style>

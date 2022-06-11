@@ -14,6 +14,10 @@ import Rankings from './pages/Rankings.vue';
   padding: 0;
 }
 
+body {
+  background-color: #181b1f;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

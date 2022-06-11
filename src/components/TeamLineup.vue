@@ -1,19 +1,32 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { ITeam } from '../interfaces/types';
 import Player from './Player.vue';
 
-defineProps<{ team: ITeam }>()
+const props = defineProps<{ 
+    team: ITeam
+    hidden: boolean
+}>()
+
+const hidden = ref(props.hidden)
 </script>
 
 <template>
 <div class="team-container">
-    <div class="team-info">
-        {{`#${team.ranking}`}}
-        {{team.name}}
+    <div @click.prevent="hidden =! hidden" class="team-info">
+        <div class="team-ranking">{{`#${team.ranking}`}}</div>
+        <!-- <img src="../assets/faze.svg" class="team-logo"/> -->
+        <img :src="team.logo" class="team-logo" />
+        <div class="team-name">{{team.name}}</div>
     </div>
-    <div class="lineup-container">
-        <div v-for="player in team.players" class="player-container">
-            <Player :player="player"/>
+    <div v-if="hidden === false" class="team-body">
+        <div class="lineup-container">
+            <div v-for="player in team.players" class="player-container">
+                <Player :player="player"/>
+            </div>
+        </div>
+        <div class="more-info">
+            <a>Team Profile</a>
         </div>
     </div>
 </div>
@@ -21,17 +34,40 @@ defineProps<{ team: ITeam }>()
 
 <style scoped>
 .team-container {
-    width: 50%
+    width: 700px;
+    overflow: hidden;
+    margin-top: 15px;
+    background-color: #2d3844;
+    color: #929a9e;
+    user-select: none;
 }
 
 .team-info {
-    text-align: left;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0px;
+    height: 2.5em;
+    cursor: pointer;
+}
+
+.team-logo {
+    width: 28px;
+    height: 28px;
+}
+
+.team-name, .team-ranking, .team-logo {
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    margin-left: 10px;
 }
 
 .lineup-container {
     display: flex;
     align-content: center;
-    background-color: gray;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
 
 .player-container {
@@ -39,5 +75,11 @@ defineProps<{ team: ITeam }>()
     flex-direction: row;
     align-content: center;
     margin: 0 auto;
+}
+
+.more-info {
+    display: flex;
+    align-items: center;
+    height: 2em;
 }
 </style>
