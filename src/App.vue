@@ -3,9 +3,9 @@ import Rankings from './pages/Rankings.vue';
 </script>
 
 <template>
-  <Suspense>
-    <Rankings />
-  </Suspense>
+<Suspense>
+  <router-view />
+</Suspense>
 </template>
 
 <style>
