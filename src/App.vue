@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Rankings from './pages/Rankings.vue';
 </script>
 
 <template>
