@@ -1,9 +1,9 @@
-import { ref } from 'vue'
-import { IState, ITeam } from '../interfaces/types';
+import { ref, UnwrapRef } from 'vue'
+import { IState } from '../interfaces/types';
 
-export async function useFetch(url: string) {
-    const state = ref<IState>({
-        response: [],
+export async function useFetch<T>(url: string) {
+    const state = ref<IState<T>>({
+        response: <T>{}
     })
 
     async function fetchData() {
@@ -13,7 +13,7 @@ export async function useFetch(url: string) {
                 throw new Error(response.statusText)
             }
             const json = await response.json() 
-            state.value.response = <ITeam[]>json
+            state.value.response = <UnwrapRef<T>>json
         } catch (err: unknown) {
             console.log(err)
         }
