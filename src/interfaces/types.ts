@@ -16,6 +16,6 @@ export interface ITeam {
     players: IPlayer[]       
 }
 
-export interface IState {
-    response: ITeam[]
+export interface IState<T> {
+    response: T
 }
