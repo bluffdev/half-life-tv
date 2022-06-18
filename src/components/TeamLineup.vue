@@ -26,7 +26,7 @@ const hidden = ref(props.hidden)
             </div>
         </div>
         <div class="more-info">
-            <a>Team Profile</a>
+            <a :href="`http://localhost:3000/team/${team.id}`" class="team-profile-link">Team Profile</a>
         </div>
     </div>
 </div>
@@ -81,5 +81,10 @@ const hidden = ref(props.hidden)
     display: flex;
     align-items: center;
     height: 2em;
+}
+
+.team-profile-link {
+    color: inherit;
+    text-decoration: none;
 }
 </style>
