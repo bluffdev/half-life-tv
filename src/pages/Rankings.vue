@@ -1,11 +1,9 @@
 <script setup lang="ts">
 import { useFetch } from '../utils/useFetch';
+import { ITeam } from '../interfaces/types';
 import TeamLineup from '../components/TeamLineup.vue';
-import { IState, ITeam } from '../interfaces/types';
-import { testState } from '../utils/testState';
 
 const { state } = await useFetch<ITeam[]>('https://hltv-rest-api.herokuapp.com/teams')
-// const state = testState()
 </script>
 
 <template>
