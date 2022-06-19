@@ -6,12 +6,11 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute()
 const { state } = await useFetch<ITeam>(`https://hltv-rest-api.herokuapp.com/teams/${route.params.id}`)
-console.log(state.value.response)
 </script>
 
 <template>
 <div v-if="state.response.players !== null" class="rankings-container">
-    <TeamInfo :team ="state?.response" />
+    <TeamInfo :team ="state.response" />
 </div>
 <div v-else>
     404 Page Does Not Exist
