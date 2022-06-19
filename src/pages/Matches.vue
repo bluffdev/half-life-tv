@@ -9,13 +9,13 @@ const { state } = await useFetch<IMatch[]>('https://hltv-rest-api.herokuapp.com/
 <template>
 <div class="matches-container">
     <div v-for="match in state.response">
-        <Match :match="match" />
+        <Match v-if="match.event.name !== ''" :match="match" />
     </div>
 </div>
 </template>
 
 <style scoped>
 .matches-container {
-    width: 70%;
+    width: 50%;
 }
 </style>
