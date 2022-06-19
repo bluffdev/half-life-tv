@@ -5,6 +5,7 @@ import App from './App.vue'
 import Home from './pages/Home.vue'
 import Rankings from './pages/Rankings.vue'
 import Team from './pages/Team.vue'
+import Matches from './pages/Matches.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -15,6 +16,10 @@ const router = createRouter({
             path: '/team/:id', 
             name: 'Team', 
             component: Team 
+        },
+        {
+            path: '/matches',
+            component: Matches
         }
     ]
 })
