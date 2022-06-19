@@ -1,3 +1,7 @@
+export interface IState<T> {
+    response: T
+}
+
 export interface IPlayer {
     fullname: string,
     image: string,
@@ -16,6 +20,18 @@ export interface ITeam {
     players: IPlayer[]       
 }
 
-export interface IState<T> {
-    response: T
+export interface IMatch {
+    id: number,
+    date: string,
+    time: string,
+    event: {
+        name: string,
+        logo: string,
+    },
+    stars: number,
+    maps: string,
+    teams: {
+        name: string,
+        logo: string
+    }[]
 }
