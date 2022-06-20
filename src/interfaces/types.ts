@@ -39,7 +39,12 @@ export interface IMatch {
 export interface IPlayer {
     id: number,
     nickname: string,
-    team: string,
+    playerFlag: string,
+    team: {
+        id: number,
+        name: string,
+        logo: string
+    },
     slug: string,
     mapsPlayed: string,
     kd: string,
