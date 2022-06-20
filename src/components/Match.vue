@@ -9,50 +9,53 @@ defineProps<{
 
 <template>
 <div class="match-container">
-    <div class="date-container">
-        <h3 class="date">{{match.date}}</h3>
-    </div>
-    <div class="match">
-        <div class="match-info">
-            <h5>{{match.time}}</h5>
-            <h5>{{match.maps}}</h5>
+    <!-- <router-link :to="`/match/${match.id}`" class="link"> -->
+        <div class="date-container">
+            <h3 class="date">{{match.date}}</h3>
         </div>
-        <div v-if="match.teams !== null" class="teams-container">
-            <div v-if="match.teams[0] !== undefined" class="team-info">
-                <img :src="match.teams[0].logo" class="team-logo" /> 
-                <h6 class="team-name">{{match.teams[0].name}}</h6>
+        <div class="match">
+            <div class="match-info">
+                <h5>{{match.time}}</h5>
+                <h5>{{match.maps}}</h5>
             </div>
-            <div v-else class="team-info">
-                <h6>Undecided</h6>
+            <div v-if="match.teams !== null" class="teams-container">
+                <div v-if="match.teams[0] !== undefined" class="team-info">
+                    <img :src="match.teams[0].logo" class="team-logo" /> 
+                    <h6 class="team-name">{{match.teams[0].name}}</h6>
+                </div>
+                <div v-else class="team-info">
+                    <h6>Undecided</h6>
+                </div>
+                <div v-if="match.teams[1] !== undefined" class="team-info">
+                    <img :src="match.teams[1].logo" class="team-logo" /> 
+                    <h6 class="team-name">{{match.teams[1].name}}</h6>
+                </div>
+                <div v-else class="team-info">
+                    <h6 class="team-name">Undecided</h6>
+                </div>
             </div>
-            <div v-if="match.teams[1] !== undefined" class="team-info">
-                <img :src="match.teams[1].logo" class="team-logo" /> 
-                <h6 class="team-name">{{match.teams[1].name}}</h6>
+            <div v-else class="teams-info">
+                <h6>Teams are Undecided</h6>
             </div>
-            <div v-else class="team-info">
-                <h6 class="team-name">Undecided</h6>
+            <div class="event-info">
+                <img :src="match.event.logo" class="event-logo" />
+                <h6 class="event-name">{{match.event.name}}</h6>
             </div>
         </div>
-        <div v-else class="teams-info">
-            <h6>Teams are Undecided</h6>
-        </div>
-        <div class="event-info">
-            <img :src="match.event.logo" class="event-logo" />
-            <h6 class="event-name">{{match.event.name}}</h6>
-        </div>
-    </div>
+    <!-- </router-link> -->
 </div>
 </template>
 
 <style scoped>
 .match-container {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: start; */
-    /* align-items: center; */
     background-color: #2d3844;
     color: #929a9e;
     margin-bottom: 15px;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
 }
 
 .date-container {
