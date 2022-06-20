@@ -43,7 +43,7 @@ table {
 
 .player-header, .team-header {
     text-align: left;
-    padding: 0.5em 0.125em;
+    padding: 0.5em 0.375em;
 }
 
 .maps-header, .kd-header, .rating-header {
