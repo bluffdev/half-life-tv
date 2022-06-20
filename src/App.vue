@@ -1,7 +1,9 @@
 <script setup lang="ts">
+import NavBar from './components/NavBar.vue';
 </script>
 
 <template>
+<NavBar />
 <Suspense>
   <router-view />
 </Suspense>
@@ -23,6 +25,5 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
