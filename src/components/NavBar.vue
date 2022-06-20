@@ -8,7 +8,7 @@
             <router-link to="/matches" class="link">Matches</router-link>
         </li>
         <li class="nav-item">
-            <router-link to="rankings" class="link">Rankings</router-link>
+            <router-link to="/rankings" class="link">Rankings</router-link>
         </li>
     </ul>
 </nav>
