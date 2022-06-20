@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { IPlayer } from '../interfaces/types';
+import { ITeamPlayer } from '../interfaces/types';
 
-defineProps<{ player: IPlayer }>()
+defineProps<{ player: ITeamPlayer }>()
 
 </script>
 

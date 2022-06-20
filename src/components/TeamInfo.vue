@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { ITeam } from '../interfaces/types';
-import Player from './Player.vue';
+import Player from './TeamPlayer.vue';
 
 defineProps<{ 
     team: ITeam

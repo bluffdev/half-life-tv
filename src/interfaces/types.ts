@@ -2,7 +2,7 @@ export interface IState<T> {
     response: T
 }
 
-export interface IPlayer {
+export interface ITeamPlayer {
     fullname: string,
     image: string,
     nickname: string,
@@ -17,7 +17,7 @@ export interface ITeam {
     ranking: number,
     name: string,
     logo: string,
-    players: IPlayer[]       
+    players: ITeamPlayer[]       
 }
 
 export interface IMatch {
