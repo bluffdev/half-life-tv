@@ -6,12 +6,19 @@ import Home from './pages/Home.vue'
 import Rankings from './pages/Rankings.vue'
 import Team from './pages/Team.vue'
 import Matches from './pages/Matches.vue'
+import Players from './pages/Players.vue'
 
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: Home },
-        { path: '/rankings', component: Rankings },
+        { 
+            path: '/', 
+            component: Home 
+        },
+        { 
+            path: '/rankings', 
+            component: Rankings 
+        },
         { 
             path: '/team/:id', 
             name: 'Team', 
@@ -20,6 +27,10 @@ const router = createRouter({
         {
             path: '/matches',
             component: Matches
+        },
+        {
+            path: '/players',
+            component: Players
         }
     ]
 })

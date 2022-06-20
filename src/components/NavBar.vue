@@ -10,6 +10,9 @@
         <li class="nav-item">
             <router-link to="/rankings" class="link">Rankings</router-link>
         </li>
+        <li class="nav-item">
+            <router-link to="/players" class="link">Players</router-link>
+        </li>
     </ul>
 </nav>
 </template>
