@@ -50,3 +50,18 @@ export interface IPlayer {
     kd: string,
     rating: string
 }
+
+export interface IResult {
+    event: {
+        name: string,
+        logo: string
+    },
+    maps: string,
+    date: string,
+    teams: {
+        name: string,
+        logo: string,
+        score: number
+    }[],
+    matchId: number
+}
