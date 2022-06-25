@@ -7,6 +7,7 @@ import Rankings from './pages/Rankings.vue'
 import Team from './pages/Team.vue'
 import Matches from './pages/Matches.vue'
 import Players from './pages/Players.vue'
+import Results from './pages/Results.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -31,6 +32,10 @@ const router = createRouter({
         {
             path: '/players',
             component: Players
+        },
+        {
+            path: '/results',
+            component: Results
         }
     ]
 })
